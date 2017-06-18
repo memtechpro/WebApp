@@ -14,6 +14,17 @@ namespace WebApp.Controllers
         {
             var member = new Member() { firstName = "John" };
             return View(member);
+            //return Content("Hello world");
+            //return HttpNotFound();
+            //return new EmptyResult();
+            //return RedirectToAction("Index", "Home", new { page = 1, sortbyname = "Name" });
+
+            
+        }
+
+        public ActionResult Edit(int id)
+        {
+            return Content("id=" + id);
         }
     }
 }
