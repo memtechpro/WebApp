@@ -10,7 +10,7 @@ namespace WebApp.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("Home");
         }
 
         public ActionResult About()
@@ -26,5 +26,12 @@ namespace WebApp.Controllers
 
             return View();
         }
+        public ActionResult Pricing()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
     }
 }

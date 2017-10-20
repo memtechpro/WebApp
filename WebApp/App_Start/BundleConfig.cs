@@ -26,6 +26,34 @@ namespace WebApp
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-flatly.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/DashboardAssets/css").Include(
+                      "~/DashboardAssets/css/bootstrap-theme.css",
+                      "~/DashboardAssets/css/style.css",
+                      "~/DashboardAssets/css/bootsrap.min.css",
+                      "~/DashboardAssets/css/elegant-icons-style.css",
+                      "~/DashboardAssets/css/font-awesome.min.css",                     
+                      "~/DashboardAssets/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css",
+                      "~/DashboardAssets/css/owl.carousel.css",
+                      "~/DashboardAssets/css/jquery-jvectormap-1.2.2.css",
+                      "~/DashboardAssets/css/widgets.css",
+                      "~/DashboardAssets/css/style-responsive.css",
+                      "~/DashboardAssets/css/jquery-ui-1.10.4.min.css"));
+
+            bundles.Add(new ScriptBundle("~/DashboardAssets/navs").Include(
+                      "~/DashboardAssets/js/jquery.js",
+                      "~/DashboardAssets/js/jquery-ui-1.10.4.min.js",
+                      "~/DashboardAssets/js/jquery-1.8.3.min.js",
+                      "~/DashboardAssets/js/jquery-ui-1.9.2.custom.min.js",
+                      "~/DashboardAssets/js/bootstrap.min.js",                                         
+                      "~/DashboardAssets/js/scripts.js",
+                      "~/DashboardAssets/js/jquery.scrollTo.min.js",
+                      "~/DashboardAssets/js/jquery.nicescroll.js",
+                      "~/DashboardAssets/js/jquery.customSelect.min.js",
+                      "~/DashboardAssets/js/jquery.autosize.min.js",
+                      "~/DashboardAssets/js/owl.carousel.js"));
+
+
         }
     }
 }

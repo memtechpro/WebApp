@@ -1,0 +1,155 @@
+﻿@model WebApp.Models.Member
+@{
+    //ViewBag.Title = "New";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html lang="en">
+<head>
+    <title>Memtechpro</title>
+    
+    @Styles.Render("~/DashboardAssets/css")
+    
+</head>
+<body>
+    <header class="header dark-bg">
+        @{
+            Html.RenderPartial("~/Views/Shared/_navbar.cshtml");            
+        }
+    </header>
+
+    <aside>
+        @{
+            Html.RenderPartial("~/Views/Shared/_sidebar.cshtml");                                 
+        }
+    </aside>
+    <section id="main-content">
+        <section class="wrapper">
+            <h1>Individual Form</h1>
+
+            @*@Html BeginForm("Action", "Controller")*@
+            @using (Html.BeginForm("Save", "Member"))
+            {
+              <div class="row">
+                    <div class="col-md-5">
+                        <div class=" form-group">
+                            @Html.LabelFor(m => m.member_full_name)
+                            @Html.TextBoxFor(m => m.member_full_name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.member_full_name)
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class=" form-group">
+                            @Html.LabelFor(m => m.member_nickname)
+                            @Html.TextBoxFor(m => m.member_nickname, new { @class = "form-control border-input interview-details" })
+                            @Html.ValidationMessageFor(m => m.member_nickname)
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class=" form-group">
+                            @Html.LabelFor(m => m.member_email)
+                            @Html.TextBoxFor(m => m.member_email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.member_email)
+                        </div>
+                        </div>
+                </div>                
+
+
+                    <div class=" form-group">
+                        @Html.LabelFor(m => m.member_address)
+                        @Html.TextBoxFor(m => m.member_address, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.member_address)
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class=" form-group">
+                                @Html.LabelFor(m => m.member_city)
+                                @Html.TextBoxFor(m => m.member_city, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.member_city)
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class=" form-group">
+                                @Html.LabelFor(m => m.member_country)
+                                @Html.TextBoxFor(m => m.member_country, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.member_country)
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class=" form-group">
+                                @Html.LabelFor(m => m.member_postal_code)
+                                @Html.TextBoxFor(m => m.member_postal_code, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.member_postal_code)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class=" form-group">
+                                @Html.LabelFor(m => m.member_telephone)
+                                @Html.TextBoxFor(m => m.member_telephone, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.member_telephone)
+                            </div>
+                        </div>
+                                                        
+                                <div class="col-md-4">
+                                    <div class=" form-group">
+                                        @Html.LabelFor(m => m.member_age)
+                                        @Html.TextBoxFor(m => m.member_age, new { @class = "form-control", @placeholder="Age"})
+                                        @Html.ValidationMessageFor(m => m.member_age)
+                                       
+                                    </div>
+                                </div>
+
+                            
+                             <div class="col-md-4">
+                                 <div class=" form-group">
+                                @Html.LabelFor(m => m.member_sex)
+                                @Html.TextBoxFor(m => m.member_sex, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.member_sex)
+                                 </div>
+                            </div>
+
+                        </div>
+                    <div class=" form-group">
+                        @Html.LabelFor(m => m.member_additional_member_info)
+                        @Html.TextBoxFor(m => m.member_additional_member_info, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.member_additional_member_info)
+                    </div>
+                    @Html.HiddenFor(m => m.member_id)
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-primary"> Save</button>
+
+                    }
+</section>
+    </section>
+
+   @Scripts.Render("~/DashboardAssets/navs")
+<script>
+
+        ////knob
+        //$(function () {
+        //    $(".knob").knob({
+        //        'draw': function () {
+        //            $(this.i).val(this.cv + '%')
+        //        }
+        //    })
+        //});
+
+        //carousel
+        $(document).ready(function () {
+            $("#owl-slider").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true
+
+            });
+        });
+
+ </script>
+
+
+</body>
+</html>
